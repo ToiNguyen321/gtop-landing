@@ -14,7 +14,7 @@ export const testimonials: ITestimonial[] = [
     avatar: "/images/testimonial-2.webp",
   },
   {
-    name: "Lê Hoàng Long",
+    name: "Nguyễn Quỳnh Mai",
     role: "Reviewer cộng đồng GTop",
     message: `Tôi thích nhất là cảm giác được chia sẻ trải nghiệm thật đến mọi người. Bài viết của tôi được lên top, nhiều người tương tác, rất vui.`,
     avatar: "/images/testimonial-3.webp",

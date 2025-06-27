@@ -5,88 +5,89 @@ import {
   FiLock,
   FiMapPin,
   FiSearch,
-  FiShield,
   FiUser,
-  FiUsers,
+  FiFlag,
 } from "react-icons/fi";
 
 import { IBenefit } from "@/types";
 
 export const benefits: IBenefit[] = [
   {
-    title: "Khám phá theo sở thích cá nhân",
+    title: "Trang chủ – Khám phá địa điểm hot",
     description:
-      "GTop hiểu gu của bạn, đề xuất địa điểm ăn uống, vui chơi, check-in phù hợp chỉ trong vài thao tác.",
+      "Ngay khi vào app, GTop hiển thị danh sách các địa điểm nổi bật, phù hợp với sở thích và vị trí của bạn, giúp việc tìm quán xá hoặc chỗ vui chơi trở nên dễ dàng và nhanh chóng.",
     bullets: [
       {
-        title: "Đề xuất thông minh",
+        title: "Danh sách địa điểm nổi bật",
         description:
-          "Dựa trên lịch sử, hành vi và sở thích, GTop cá nhân hóa từng gợi ý địa điểm.",
+          "Hiển thị những địa điểm hot nhất, gợi ý dựa trên xu hướng và gu cá nhân của bạn.",
         icon: <FiMapPin size={26} />,
       },
       {
-        title: "Lưu lại địa điểm yêu thích",
-        description: "Dễ dàng lưu lại quán xá và nơi chốn để ghé lại sau này.",
+        title: "Lưu nhanh địa điểm yêu thích",
+        description:
+          "Dễ dàng lưu lại những quán ăn, điểm check-in để khám phá sau này.",
         icon: <FiBookmark size={26} />,
       },
       {
         title: "Khám phá theo mood & vibe",
         description:
-          "Tìm nơi phù hợp với tâm trạng: chill, náo nhiệt, lãng mạn, sống ảo,…",
+          "Tìm những nơi phù hợp với tâm trạng: chill, nhộn nhịp, sống ảo hay lãng mạn.",
         icon: <FiHeart size={26} />,
       },
     ],
     imageSrc: "/images/mockup-1.webp",
   },
   {
-    title: "Review thật từ cộng đồng",
+    title: "Tìm kiếm thông minh",
     description:
-      "Tất cả đánh giá đều từ người dùng thực. Hình ảnh và trải nghiệm thật – không chỉnh sửa, không quảng cáo.",
+      "Tìm kiếm địa điểm dễ dàng theo danh mục, món ăn, vibe hoặc theo vị trí. GTop hỗ trợ lấy định vị để gợi ý nơi gần bạn nhất.",
     bullets: [
       {
-        title: "Ảnh chụp thực tế",
-        description: "Hình ảnh do người dùng đăng, không qua photoshop.",
-        icon: <FiCamera size={26} />,
-      },
-      {
-        title: "Đánh giá có xác thực",
+        title: "Tìm kiếm theo danh mục hoặc từ khóa",
         description:
-          "Review chỉ đến từ người đã check-in hoặc sử dụng dịch vụ.",
-        icon: <FiUsers size={26} />,
-      },
-      {
-        title: "Tìm kiếm theo từ khóa",
-        description:
-          "Tìm món ăn, không gian, địa điểm theo nội dung người dùng chia sẻ.",
+          "Tìm nhanh món ăn, quán xá, loại hình vui chơi theo keyword hoặc danh mục cụ thể.",
         icon: <FiSearch size={26} />,
+      },
+      {
+        title: "Tìm gần vị trí của bạn",
+        description:
+          "Sử dụng định vị GPS để tìm những địa điểm xung quanh bạn, tiện lợi và nhanh chóng.",
+        icon: <FiMapPin size={26} />,
+      },
+      {
+        title: "Xem ảnh thực tế",
+        description:
+          "Danh sách kết quả hiển thị ảnh thật do người dùng chia sẻ, giúp bạn dễ hình dung không gian.",
+        icon: <FiCamera size={26} />,
       },
     ],
     imageSrc: "/images/mockup-2.webp",
   },
   {
-    title: "Bảo mật và quyền riêng tư",
+    title: "Chi tiết địa điểm đầy đủ",
     description:
-      "Chúng tôi tôn trọng thông tin cá nhân và hành vi người dùng. GTop được xây dựng với tiêu chuẩn bảo mật cao nhất.",
+      "Xem mọi thông tin chi tiết của địa điểm: ảnh thật, review từ cộng đồng, địa chỉ, bản đồ, cùng tính năng báo cáo sai sót để bảo vệ cộng đồng.",
     bullets: [
       {
-        title: "Bảo mật thông tin cá nhân",
+        title: "Review chân thực từ người dùng",
         description:
-          "Dữ liệu của bạn được mã hóa và không chia sẻ cho bên thứ ba.",
-        icon: <FiLock size={26} />,
-      },
-      {
-        title: "Đăng nhập an toàn",
-        description:
-          "Hỗ trợ xác thực qua OTP, sinh trắc học hoặc social login đáng tin cậy.",
+          "Hiển thị tất cả đánh giá, hình ảnh thực tế, giúp bạn yên tâm lựa chọn địa điểm.",
         icon: <FiUser size={26} />,
       },
       {
-        title: "Giám sát bảo mật liên tục",
+        title: "Báo cáo địa điểm",
         description:
-          "Phát hiện hoạt động bất thường và cảnh báo kịp thời để bảo vệ tài khoản.",
-        icon: <FiShield size={26} />,
+          "Cho phép người dùng report địa điểm nếu thông tin không đúng, hình ảnh giả hoặc trải nghiệm không tốt.",
+        icon: <FiFlag size={26} />,
+      },
+      {
+        title: "Thông tin chi tiết & bảo mật",
+        description:
+          "Hiển thị địa chỉ, giờ mở cửa, bản đồ, thông tin liên hệ; đồng thời đảm bảo quyền riêng tư cho người dùng.",
+        icon: <FiLock size={26} />,
       },
     ],
-    imageSrc: "/images/mockup-1.webp",
+    imageSrc: "/images/mockup-3.webp",
   },
 ];

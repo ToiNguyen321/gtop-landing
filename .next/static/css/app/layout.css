@@ -1063,11 +1063,11 @@ video {
 .pt-4 {
   padding-top: 1rem;
 }
-.pt-7 {
-  padding-top: 1.75rem;
-}
 .pt-5 {
   padding-top: 1.25rem;
+}
+.pt-7 {
+  padding-top: 1.75rem;
 }
 .text-left {
   text-align: left;
@@ -1416,16 +1416,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0px;
   }
 
-  .lg\:my-20 {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
-
-  .lg\:my-10 {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
-
   .lg\:ml-0 {
     margin-left: 0px;
   }
@@ -1489,14 +1479,6 @@ h1, h2, h3, h4, h5, h6 {
   .lg\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
-  }
-
-  .lg\:pt-20 {
-    padding-top: 5rem;
-  }
-
-  .lg\:pt-10 {
-    padding-top: 2.5rem;
   }
 
   .lg\:text-left {
