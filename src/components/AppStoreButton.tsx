@@ -5,11 +5,16 @@ import { siteDetails } from "@/data/siteDetails";
 
 const AppStoreButton = ({ dark }: { dark?: boolean }) => {
   return (
-    <a href={siteDetails.appStoreUrl} target="_blank" rel="noopener noreferrer">
+    <a
+      href={siteDetails.appStoreUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-3"
+    >
       <button
         type="button"
         className={clsx(
-          "flex items-center justify-center min-w-[205px] mt-3 px-6 h-14 rounded-full w-full sm:w-fit",
+          "flex items-center justify-center min-w-[205px] px-6 h-14 rounded-full w-full sm:w-fit",
           {
             "text-white bg-foreground": dark,
             "text-foreground bg-white": !dark,

@@ -10,21 +10,37 @@ export const footerDetails: {
   subheading:
     "Khám phá những địa điểm ăn chơi, sống ảo và trải nghiệm thật được chia sẻ bởi cộng đồng GTop.",
   quickLinks: [
+    // {
+    //   text: "Tính năng",
+    //   url: "#features",
+    // },
+    // {
+    //   text: "Địa điểm nổi bật",
+    //   url: "#places",
+    // },
+    // {
+    //   text: "Cảm nhận người dùng",
+    //   url: "#testimonials",
+    // },
+    // {
+    //   text: "Câu hỏi thường gặp",
+    //   url: "#faq",
+    // },
     {
-      text: "Tính năng",
-      url: "#features",
+      text: "Hỗ trợ",
+      url: "/support",
     },
     {
-      text: "Địa điểm nổi bật",
-      url: "#places",
+      text: "Chính sách bảo mật",
+      url: "/privacy-policy",
     },
     {
-      text: "Cảm nhận người dùng",
-      url: "#testimonials",
+      text: "Điều khoản sử dụng",
+      url: "/terms-of-use",
     },
     {
-      text: "Câu hỏi thường gặp",
-      url: "#faq",
+      text: "Tiêu chuẩn an toàn",
+      url: "/safety-standards",
     },
   ],
   email: "gtop.06368@gmail.com",

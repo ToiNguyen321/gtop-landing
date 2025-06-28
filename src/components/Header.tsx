@@ -2,7 +2,8 @@
 
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useState, useEffect } from "react";
 import { HiBars3, HiOutlineXMark } from "react-icons/hi2";
 
 import { menuItems } from "@/data/menuItems";
@@ -11,21 +12,67 @@ import Container from "./Container";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Handle scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Function to handle navigation with smooth scroll
+  const handleNavigation = (url: string) => {
+    const isHomePage = pathname === "/";
+
+    if (isHomePage) {
+      // If on homepage, just scroll to section
+      const element = document.querySelector(url);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If on other pages, navigate to homepage first, then scroll
+      router.push(`/${url}`);
+    }
+
+    // Close mobile menu if open
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  };
+
   return (
-    <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 mx-auto w-full transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+      }`}
+    >
       <Container className="!px-0">
-        <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
+        <nav
+          className={`mx-auto flex justify-between items-center py-2 px-5 md:py-4 transition-all duration-300 ${
+            isScrolled
+              ? "bg-white"
+              : "bg-white md:bg-transparent shadow-md md:shadow-none"
+          }`}
+        >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             {/* <FaFingerprint className="text-foreground min-w-fit w-7 h-7" /> */}
             <img
               src={siteDetails.siteLogo}
               className="text-foreground min-w-fit w-8 h-8"
+              alt={siteDetails.siteName}
             />
             <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
               {siteDetails.siteName}
@@ -35,22 +82,22 @@ const Header: React.FC = () => {
           {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-6">
             {menuItems.map((item) => (
-              <li key={item.text}>
-                <Link
-                  href={item.url}
-                  className="text-foreground hover:text-foreground-accent transition-colors"
+              <li key={item.text} className="flex items-center">
+                <button
+                  onClick={() => handleNavigation(item.url)}
+                  className="text-foreground hover:text-foreground-accent transition-colors bg-transparent border-none cursor-pointer"
                 >
                   {item.text}
-                </Link>
+                </button>
               </li>
             ))}
-            <li>
-              <Link
-                href="#cta"
-                className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors"
+            <li className="flex items-center">
+              <button
+                onClick={() => handleNavigation("#cta")}
+                className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors border-none cursor-pointer"
               >
                 Tải ứng dụng
-              </Link>
+              </button>
             </li>
           </ul>
 
@@ -84,27 +131,25 @@ const Header: React.FC = () => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
+        <div id="mobile-menu" className="md:hidden bg-white shadow-lg border-t">
           <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
             {menuItems.map((item) => (
-              <li key={item.text}>
-                <Link
-                  href={item.url}
-                  className="text-foreground hover:text-primary block"
-                  onClick={toggleMenu}
+              <li key={item.text} className="flex items-center">
+                <button
+                  onClick={() => handleNavigation(item.url)}
+                  className="text-foreground hover:text-primary block bg-transparent border-none cursor-pointer text-left w-full py-2"
                 >
                   {item.text}
-                </Link>
+                </button>
               </li>
             ))}
-            <li>
-              <Link
-                href="#cta"
-                className="text-black bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit"
-                onClick={toggleMenu}
+            <li className="flex items-center">
+              <button
+                onClick={() => handleNavigation("#cta")}
+                className="text-black bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit border-none cursor-pointer"
               >
                 Bắt đầu ngay
-              </Link>
+              </button>
             </li>
           </ul>
         </div>

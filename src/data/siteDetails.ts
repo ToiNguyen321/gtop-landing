@@ -1,6 +1,6 @@
 export const siteDetails = {
   siteName: "GTop",
-  siteUrl: "https://finwise-omega.vercel.app/",
+  siteUrl: "https://gtop.onrender.com/",
   metadata: {
     title: "GTop - Tìm địa điểm ăn uống và vui chơi phù hợp với bạn",
     description:
